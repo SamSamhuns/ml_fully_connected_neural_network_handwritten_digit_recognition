@@ -1,4 +1,6 @@
-# K Nearest Neighbors
+# Fully connected Neural Network with numpy
+
+Implementation of a fully connected neural network from scratch in Python.
 
 ## Setup
 
