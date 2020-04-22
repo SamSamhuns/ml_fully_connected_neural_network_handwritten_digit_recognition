@@ -27,6 +27,28 @@ To remove a kernel:
 $ jupyter kernelspec uninstall unwanted-kernel
 ```
 
+### To setup jupyter notebook extensions
+
+`pep8` package is required for auto-linting in the notebook.
+
+```shell
+$ pip install -e jupyter_contrib_nbextensions     # For pip
+$ conda install -c conda-forge jupyter_contrib_nbextensions # For Anaconda
+$ jupyter contrib nbextension install --user
+$ pip install pep8                                # For pip, required for auto-linting
+$ conda install -c anaconda pep8                  # For Anaconda, required for auto-linting
+```
+
+### To setup Jupyter Notebook themes
+
+We use [dunovank/jupyter-themes](https://github.com/dunovank/jupyter-themes)
+
+```shell
+$ pip install --upgrade jupyterthemes             # For pip
+$ conda install -c conda-forge jupyterthemes      # For Anaconda
+$ jt -t chesterish -T -f roboto -fs 12 -cellw 95% # Sets theme to chesterish, enables toolbar, sets font to robot, sets fontsize to 12, set cell width to 95% of screen
+```
+
 ## Data
 
 The data source used was the MNIST handwritten digit dataset.
@@ -74,3 +96,9 @@ Accuracy = 10.292072%
 Accuracy = 97.079277%
 
 We observe the highest accuracy for the [64, 30, 10] neurons model with the `tanh` activation function with prediction accuracy of `97.079277%` followed by the model with the `sigmoid` activation with accuracy of `95.54937%` and finally the model with the ReLU performed dreadfully, not learning the training set at all with an accuracy of a mere `10%`. ReLU might be performing poorly because ReLU activations should only be used for hidden layers and not all layers.
+
+## Fully Connected Neural Network Implementation with PyTorch
+
+With the Pytorch Implementation of the [64, 30, 10] structure, convergence is achieved very quickly with test set accuracy at 97.76%
+
+![](img/pytorch_loss.png)
